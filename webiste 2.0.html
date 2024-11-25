@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How citizens can contribute towards environmental protection and sustainable development.">
+    <title>Environmental Protection & Sustainable Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #161D6F;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ddd;
+        }
+
+        .hero {
+            text-align: center;
+            background: url('https://images.pexels.com/photos/28893037/pexels-photo-28893037/free-photo-of-aerial-view-of-venetian-lagoon-in-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            /* background: url('https://images.pexels.com/photos/28991358/pexels-photo-28991358/free-photo-of-serene-twilight-at-stamford-shoreline.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover; */
+            height: 60vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-item {
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            padding: 10px;
+            background: #0B2F9F;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: #0B2F9F;
+        }
+
+        /* Back-to-Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0B2F9F;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 10;
+        }
+
+        #back-to-top:hover {
+            background-color: #0B2F9F;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .gallery img {
+            /* width: 200px;
+            height: 150px; */
+            /* object-fit: cover; */
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .quote {
+            font-style: italic;
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 4px solid #4CAF50;
+            background: #f9f9f9;
+        }
+
+        /*Sustaible goals*/
+        .card{
+            position: relative;
+            height: 250px;
+            width: 150px;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+        .back{
+            padding-top: 50px;
+            text-align: center;
+            transform: rotateY(180deg);
+        }
+        .cardFace{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+        .card:hover{
+            transform: rotateY(180deg);
+        }
+        .sdg{
+            margin-top: 50px;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            gap: 0px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 150px;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h4 {
+            margin: 5px 0;
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background-color: #08C2FF;
+            z-index: 9999;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <header>
+        <h1>Citizens' Contribution to Environmental Protection</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#importance">Importance</a></li>
+                <li><a href="#actions">Actions to Take</a></li>
+                <li><a href="#sustainable">Sustainable Development</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h2>Make a Difference Today</h2>
+            <p>Discover how your small actions can lead to big changes for the environment.</p>
+        </div>
+    </section>
+
+    <section id="importance">
+        <h2>Why is Environmental Protection Important?</h2>
+        <p>Environmental protection is vital for the well-being of all life on Earth. It helps to preserve ecosystems, improve air and water quality, and prevent biodiversity loss. Citizens play a crucial role in supporting policies and adopting practices that contribute to a healthier planet.</p>
+    </section>
+
+    <section id="actions">
+        <h2>What Can You Do?</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Reduce, Reuse, Recycle</h3>
+                <img src="REDUSE REUSE RECYCLE (1).jpg" alt="Recycling" height="100px" style="margin-left: 65px;">
+                <!-- <img src="https://static.vecteezy.com/system/resources/previews/022/210/039/original/world-environment-day-reduce-reuse-recycle-vector.jpg" alt="Recycling"> -->
+                <p>Reduce waste by adopting a minimalist lifestyle. Reuse products whenever possible, and always recycle your waste properly.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Save Water</h3>
+                <img src="SAVE WATER (1).jpg" alt="Saving Water" height="100px" style="margin-left: 65px;">
+                <!-- <img src="https://th.bing.com/th/id/OIP.4z7103baN8IdsOeGnqrB8gHaHt?rs=1&pid=ImgDetMain" alt="Saving Water"> -->
+                <p>Practice water conservation by fixing leaks, taking shorter showers, and using water-saving appliances.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Plant Trees</h3>
+                <img src="SAVE TREES (1).jpg" alt="Planting Trees" height="100px" style="margin-left: 65px;">
+                <!-- <img src="https://th.bing.com/th/id/OIP.hcUwtM1Asi7_kVGHXVNNiAHaHa?w=626&h=626&rs=1&pid=ImgDetMain" alt="Planting Trees"> -->
+                <p>Get involved in community tree-planting initiatives, or plant trees in your own garden to absorb CO2 and improve air quality.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Use Public Transport</h3>
+                <img src="PUBLIC TRANSPORT (1).jpg" alt="Public Transport" height="100px" style="margin-left: 65px;">
+                <!-- <img src="https://static.vecteezy.com/system/resources/previews/017/776/361/original/sustainable-living-characters-in-modern-eco-city-driving-bike-eco-friendly-vehicle-and-sustainable-transportation-concept-illustration-vector.jpg" alt="Public Transport"> -->
+                <p>Opt for public transportation, biking, or walking to reduce carbon emissions and reduce traffic congestion.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustainable">
+        <h2>Sustainable Development</h2>
+        <img src="SUSTAINABLE DEVELOPMENT (1).jpg" alt="Sustainable Energy" height="250px">
+        <p>Sustainable development meets the needs of the present without compromising the ability of future generations to meet their own needs. This requires citizens to promote the use of renewable energy, support eco-friendly products, and advocate for government policies focused on environmental sustainability.</p>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <img src="Gal Animals (1).jpg" alt="Nature 1" height="220px">
+            <img src="Gal animals with human (1).jpg" alt="Nature 2" height="220px">
+            <img src="Gal scenery (1).jpg" alt="Nature 3" height="220px">
+            <img src="Gal Tree hugging (1).jpg" alt="Nature 4" height="220px">
+            <img src="Gal sustainable (1).jpg" alt="Nature 5" height="220px">
+        </div>
+    </section>
+
+    <!-- Sustainable goals -->
+    <section class="sdg">
+        <div class="card">
+            <div class="front cardFace"><img src="goal1.png" height="250px" width="168px"></div>
+            <div class="back cardFace">Goal 1 calls for an end to poverty in all its manifestations by 2030. It also aims to ensure social protection for the poor and vulnerable.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal2.png" height="250px" width="168px"></div>
+            <div class="back cardFace">End hunger, achieve food security and improved nutrition and promote sustainable agriculture.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal3.png" height="250px" width="168px"></div>
+            <div class="back cardFace">promote well-being and ensure healthy lives for all people at all ages.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal4.png" height="250px" width="168px"></div>
+            <div class="back cardFace">"ensure inclusive and equitable quality education and promote lifelong learning opportunities for all."</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal5.png" height="250px" width="168px"></div>
+            <div class="back cardFace">Achieve gender equality and empower all women and girls. </div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal6.png" height="250px" width="168px"></div>
+            <div class="back cardFace">Ensure access to water and sanitation for all. Access to safe water, sanitation and hygiene is the most basic human need for health and well-being. </div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal7.png" height="250px" width="168px"></div>
+            <div class="back cardFace">ensuring universal access to affordable, reliable and sustainable energy. This includes improving energy efficiency, increasing the share of renewables </div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal8.png" height="250px" width="168px"></div>
+            <div class="back cardFace">Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all. </div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal9.png" height="250px" width="168px"></div>
+            <div class="back cardFace">to build resilient infrastructure, promote sustainable industrialization and foster innovation.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal10.jpg" height="250px" width="168px"></div>
+            <div class="back cardFace">aims to provide equal access to affordable vocational training, to eliminate gender and wealth disparities, and achieve universal access to a quality higher education.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal11.png" height="250px" width="168px"></div>
+            <div class="back cardFace"> It is about making cities and human settlements inclusive, safe, resilient and sustainable. Cities represent the future of global living.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal12.png" height="250px" width="168px"></div>
+            <div class="back cardFace">It is about ensuring sustainable consumption and production patterns, which is key to sustain the livelihoods of current and future generations.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal13.png" height="250px" width="168px"></div>
+            <div class="back cardFace">Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal14.png" height="250px" width="168px"></div>
+            <div class="back cardFace">It is about conserving and sustainably using the oceans, seas and marine resources. Healthy oceans and seas are essential to human existence and life on Earth.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal15.png" height="250px" width="168px"></div>
+            <div class="back cardFace">managing forests sustainably, halting and reversing land and natural habitat degradation, successfully combating desertification and stopping biodiversity loss.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal16.png" height="250px" width="168px"></div>
+            <div class="back cardFace">promoting peaceful and inclusive societies, providing access to justice for all, and building effective and accountable institutions</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="goal17.png" height="250px" width="168px"></div>
+            <div class="back cardFace">It is about revitalizing the global partnership for sustainable development.</div>
+        </div>
+
+        <div class="card">
+            <div class="front cardFace"><img src="all.png" height="250px" width="168px"></div>
+            <div class="back cardFace"></div>
+        </div>
+    </section>
+
+    
+    <section id="news">
+        <h2>Latest Environmental Articles</h2><br>
+        <article>
+            <h3>Sustainable development: Meaning, history, principles, pillars, and implications for human action: Literature review</h3>
+            <a href="https://www.tandfonline.com/doi/full/10.1080/23311886.2019.1653531#abstract" target="_blank">Taylor & Francis</a><br>
+            <h3>Sustainable development | Britannica</h3>
+            <a href="https://www.britannica.com/topic/sustainable-development" target="_blank">Britannica.com</a><br>
+        </article>
+    </section>
+    
+    <section>
+        <div class="quote">
+            "The greatest threat to our planet is the belief that someone else will save it." – Robert Swan
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <h3>Meet the Team</h3>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="path/to/member1.jpg" alt="Member 1">
+                <h4>Sunidhi Kumari</h4>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="path/to/member2.jpg" alt="Member 2">
+                <h4>Sakshi Kumari</h4>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="path/to/member3.jpg" alt="Member 3">
+                <h4>Indulekha S</h4>
+                <p>Designer</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="back-to-top">&#8679;</div>
+
+    <script>
+        // Back-to-Top Button Logic
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Scroll Progress Bar Logic
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
